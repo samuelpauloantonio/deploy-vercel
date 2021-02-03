@@ -2,7 +2,16 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Home Page Route'));
+const nunjucks = require('nunjucks')
+
+ 
+app.set('view engine' ,"njk")
+
+nunjucks.configure('./views', {
+    express : app
+})
+
+app.get('/', (req, res) => res.render('index.html'));
 
 app.get('/about', (req, res) => res.send('About Page Route'));
 
