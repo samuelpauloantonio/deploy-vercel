@@ -7,7 +7,7 @@ const nunjucks = require('nunjucks')
  
 app.set('view engine' ,"njk")
 
-nunjucks.configure('./views', {
+nunjucks.configure('./', {
     express : app
 })
 
